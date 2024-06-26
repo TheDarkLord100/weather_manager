@@ -70,6 +70,13 @@ class ForecastWeatherResponse {
     );
   }
 
+
+  /// Returns a string implementation of [ForecastWeatherResponse]
+  ///
+  /// The [toString] method provides a human-readable representation of the
+  /// [ForecastWeatherResponse] object, which includes the coordinates,
+  /// weather data, sunrise and sunset times, city and country name,
+  /// timezone offset, and data source.
   @override
   String toString() {
     return 'ForecastWeatherResponse {'

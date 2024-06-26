@@ -1,5 +1,6 @@
 part of weather_manager;
 
+/// A class that represents detailed weather data.
 class WeatherData {
   /// The current weather condition.
   final WeatherCondition weatherCondition;
@@ -67,6 +68,7 @@ class WeatherData {
   /// The probability of precipitation, if available.
   final double? pop;
 
+  /// Creates an instance of [WeatherData].
   WeatherData(
       {required this.weatherCondition,
       required this.weatherDescription,
@@ -91,8 +93,9 @@ class WeatherData {
       required this.currentTime,
       this.pop});
 
-
-  factory WeatherData.fromMap(Map<String, dynamic> map, Duration timeZoneOffset) {
+  /// Creates an instance of [WeatherData] from a map containing the response data.
+  factory WeatherData.fromMap(
+      Map<String, dynamic> map, Duration timeZoneOffset) {
     final weather = map['weather'][0];
     String urlCode = weather['icon'].substring(0, 2);
     final main = map['main'];
@@ -127,6 +130,7 @@ class WeatherData {
         pop: map['pop']?.toDouble() ?? null);
   }
 
+  /// Returns a string representation of the weather data.
   @override
   String toString() {
     return 'WeatherData'

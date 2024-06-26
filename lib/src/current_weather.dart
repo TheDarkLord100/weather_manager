@@ -9,11 +9,16 @@ class CurrentWeather {
   final String apiKey;
 
   /// Creates an instance of [CurrentWeather] with the provided HTTP client and API key.
+  ///
+  /// - [client]: The HTTP client used for making network requests.
+  /// - [apiKey]: The API key for authenticating requests to the OpenWeather API.
   CurrentWeather(this.client, this.apiKey);
 
   /// Fetches the current weather data for a given latitude and longitude.
   ///
-  /// The [lat] and [long] parameters specify the geographical coordinates.
+  /// - [lat]: The latitude coordinate for the location.
+  /// - [long]: The longitude coordinate for the location.
+  ///
   /// Returns a [CurrentWeatherResponse] containing the weather data if the request is successful.
   /// Throws an [APIException] if the request fails.
   Future<CurrentWeatherResponse> currentWeatherByLatLong({
@@ -33,6 +38,13 @@ class CurrentWeather {
     }
   }
 
+  /// Fetches the hourly weather forecast data for a given latitude and longitude.
+  ///
+  /// - [lat]: The latitude coordinate for the location.
+  /// - [long]: The longitude coordinate for the location.
+  ///
+  /// Returns a [ForecastWeatherResponse] containing the forecast data if the request is successful.
+  /// Throws an [APIException] if the request fails.
   Future<ForecastWeatherResponse> hourlyWeatherForecast({
     required double lat,
     required double long,

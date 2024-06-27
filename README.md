@@ -31,18 +31,7 @@ import 'package:weather_manager/weather_manager.dart';
 Create an instance of `WeatherMan` with your OpenWeather API key:
 
 ```dart
-void main() async {
   WeatherMan weatherMan = WeatherMan(apiKey: 'your_api_key_here');
-
-  // Get hourly weather forecast for 5 days every 3 hours
-  final hourlyWeatherForecast = await weatherMan.getHourlyForecast(lat: 26.9287, long: 80.9335);
-
-  // Get current weather forecast
-  final currentWeather = await weatherMan.getCurrentWeatherByLatLong(lat: 26.9287, long: 80.9335);
-
-  print(hourlyWeatherForecast);
-  print(currentWeather);
-}
 ```
 
 ### Example
